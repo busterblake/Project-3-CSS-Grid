@@ -55,12 +55,40 @@ div img {
 	background-color: #FFFCE6;
 }
 
+/* new colors for the new column sizes */
+.col-3 {
+	background-color: #F2CA35;
+}
+
+.col-4 {
+	background-color: #C4B8AE;
+}
+
+/* Row 6: tiles start at 160px and grow to fill leftover space.
+   The browser decides how many fit per line, so no media queries are needed. */
+.fluid-row {
+	gap: 20px;       /* space between tiles, replacing the 4% margins */
+	padding: 0 4%;   /* lines the row's edges up with the rows above */
+}
+
+.tile {
+	flex: 1 1 160px; /* grow: yes, shrink: yes, starting size: 160px */
+	background-color: #D9C3E8;
+}
+
 /* Tablet Landscape Screen Sizes */
 @media only screen and (min-width: 480px)  {
 	
   .col-1,
   .col-2 {
 		flex: 0 0 44%;
+	}
+  .tablet-full {
+		flex: 0 0 92%;
+	}
+
+  .tablet-first {
+		order: -1;
 	}
   
   
@@ -82,4 +110,18 @@ div img {
 		flex: 0 0 44%;
 	}
 
+		/* 3 slots: 3 x 24% - 4% */
+	.col-3 {
+		flex: 0 0 68%;
+	}
+
+	
+	.col-4 {
+		flex: 0 0 92%;
+	}
+
+	
+	.tablet-first {
+		order: 0;
+	}
 }
